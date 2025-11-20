@@ -17,6 +17,13 @@ public class MatrizAdjunta {
             }
         }
 
+        double[][] adj = adjunta(m);
+
+        imprimir(adj);
+    }
+
+    public static double[][] adjunta(double[][] m) {
+        int n = m.length;
         double[][] cof = new double[n][n];
 
         for (int i = 0; i < n; i++) {
@@ -26,7 +33,14 @@ public class MatrizAdjunta {
             }
         }
 
-        imprimir(cof);
+        double[][] a = new double[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                a[j][i] = cof[i][j];
+            }
+        }
+
+        return a;
     }
 
     public static double[][] sub(double[][] m, int f, int c) {
